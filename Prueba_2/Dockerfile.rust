@@ -1,0 +1,43 @@
+# Usamos una imagen base de Debian
+FROM ubuntu:latest
+
+ARG web_document_root=/home
+
+ENV WEB_DOCUMENT_ROOT=$web_document_root
+
+WORKDIR $web_document_root
+
+# Actualizamos los paquetes e instalamos las dependencias necesarias para Rust
+RUN apt-get update && apt-get install -y \
+    libsqlite3-dev \
+    curl \
+    build-essential \
+    clang \
+    pkg-config \
+    libmpich-dev \
+    mpich \
+    && rm -rf /var/lib/apt/lists/*
+
+# Instalamos Rust usando rustup, que es el instalador oficial de Rust
+RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+
+# Agregamos Rust al PATH para que esté disponible en todas las sesiones
+ENV PATH="/root/.cargo/bin:${PATH}"
+
+# Creamos un directorio para los proyectos
+RUN mkdir -p /home/rust
+
+# Establecemos /home/project como directorio de trabajo
+WORKDIR /home/rust
+
+# Copiamos el archivo Cargo.toml y Cargo.lock
+COPY Cargo.toml Cargo.lock ./
+
+# Copiamos el resto del código fuente
+#COPY src ./src 
+
+# Descargamos las dependencias del proyecto
+RUN cargo build --release
+
+# Comando por defecto para verificar la instalación de Rust
+CMD ["mpirun", "-n", "4", "cargo", "run", "--release"]

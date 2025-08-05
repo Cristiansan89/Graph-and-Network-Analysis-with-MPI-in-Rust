@@ -1,0 +1,7 @@
+services:
+  rust:
+    build:
+      context: .
+      dockerfile: Dockerfile.rust
+    volumes:
+      - ./docker-rust:/home
