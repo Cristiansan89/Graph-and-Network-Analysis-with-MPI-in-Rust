@@ -1,6 +1,6 @@
 # Análisis de Grafos y Redes con MPI
 
-<h2> *Proyecto para la materia "Paradigmas y Lenguajes de Programación"* </h2>
+<h2> *Proyecto* *para* *la* *materia* *"Paradigmas* *y* *Lenguajes* *de* *Programación"* </h2>
 
 ## Implementación en Rust
 
