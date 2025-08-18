@@ -18,7 +18,7 @@ El código fuente en Rust permite generar grafos de distintos tamaños. Las conf
 4. Ejecute el siguiente comando para compilar y correr el programa con 4 procesos:
 
 ```bash
-bash** mpiexec -n 4 cargo run --release **
+** mpiexec -n 4 cargo run --release **
 ```
 ## Implementación en C
 
@@ -31,8 +31,12 @@ El archivo grafo_mpi.c contiene el código fuente para generar un grafo de 1 mil
 3. Para obtener mediciones de rendimiento precisas, se recomienda cerrar todas las aplicaciones que no sean esenciales. Esto ayuda a evitar interferencias en los tiempos de cómputo y comunicación.
 4. Compilar el código con el siguiente comando:
 
-```bash** mpicc -o grafo_mpi.exe grafo_mpi.c **```
+```bash
+** mpicc -o grafo_mpi.exe grafo_mpi.c **
+```
    
 6. Ejecute el siguiente comando para lanzar el programa precompilado (grafo_mpi.exe) con 4 procesos:
 
-```bash** mpiexec -n 4 grafo_mpi.exe **```
+```bash
+** mpiexec -n 4 grafo_mpi.exe **
+```
