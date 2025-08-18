@@ -5,10 +5,10 @@
 ## Implementación en Rust
 
 El código fuente en Rust permite generar grafos de distintos tamaños. Las configuraciones se encuentran separadas de la siguiente manera:
-<br>
- *Prueba_1: Genera un grafo de 250.000 vértices y aristas.<br>
- *Prueba_2: Genera un grafo de 500.000 vértices y aristas.<br>
- *Prueba_3: Genera un grafo de 1 millón de vértices y aristas.<br>
+
+ * <b>Prueba_1:</b> Genera un grafo de 250.000 vértices y aristas.<br>
+ * <b>Prueba_2:</b> Genera un grafo de 500.000 vértices y aristas.<br>
+ * <b>Prueba_3:</b> Genera un grafo de 1 millón de vértices y aristas.<br>
 
 ### Instrucciones de Ejecución (Rust)
 
@@ -17,7 +17,7 @@ El código fuente en Rust permite generar grafos de distintos tamaños. Las conf
 3. Para obtener mediciones de rendimiento precisas, se recomienda cerrar todas las aplicaciones que no sean esenciales para evitar congestión y consumo de recursos durante el cálculo.
 4. Ejecute el siguiente comando para compilar y correr el programa con 4 procesos:
 
-```bash* mpiexec -n 4 cargo run --release *```
+```bash mpiexec -n 4 cargo run --release ```
 
 ## Implementación en C
 
