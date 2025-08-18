@@ -17,8 +17,7 @@ El código fuente en Rust permite generar grafos de distintos tamaños. Las conf
 3. Para obtener mediciones de rendimiento precisas, se recomienda cerrar todas las aplicaciones que no sean esenciales para evitar congestión y consumo de recursos durante el cálculo.
 4. Ejecute el siguiente comando para compilar y correr el programa con 4 procesos:
 
-```bash 
-   mpiexec -n 4 cargo run --release
+```bash** mpiexec -n 4 cargo run --release **
 ```
 ## Implementación en C
 
