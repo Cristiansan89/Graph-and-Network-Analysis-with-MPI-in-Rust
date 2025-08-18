@@ -1,36 +1,33 @@
-# Paradigmas y Lenguajes de Programación
+# Análisis de Grafos y Redes con MPI
 
-# Análisis de Grafos y Redes con MPI en Rust
+<h2>*Proyecto para la materia "Paradigmas y Lenguajes de Programación"*</h2>
 
-## MPI en el Lenguaje Rust
+## Implementación en Rust
 
-### Prueba_1
+El código fuente en Rust permite generar grafos de distintos tamaños. Las configuraciones se encuentran separadas de la siguiente manera:
 
-- En prueba 1 se encuentra el código rust que permite generar 250.000 vértices y aristas.
+ *Prueba_1: Genera un grafo de 250.000 vértices y aristas.
+ *Prueba_2: Genera un grafo de 500.000 vértices y aristas.
+ *Prueba_3: Genera un grafo de 1 millón de vértices y aristas.
 
-### Prueba_2
+### Instrucciones de Ejecución (Rust)
 
-- En prueba 1 se encuentra el código rust que permite generar 500.000 vértices y aristas.
+1. Abra una terminal de línea de comandos (Se recomienda en Windows `CMD` o `Windows PowerShell` y en Linux `Terminal`).
+2. (Opcional) Si la implementación de MPI lo requiere, ejecute la terminal en `modo administrador`.
+3. Para obtener mediciones de rendimiento precisas, se recomienda cerrar todas las aplicaciones que no sean esenciales para evitar congestión y consumo de recursos durante el cálculo.
+4. Ejecute el siguiente comando para compilar y correr el programa con 4 procesos:
 
-### Prueba_3
+``bash* mpiexec -n 4 cargo run --release*
 
-- En prueba 1 se encuentra el código rust que permite generar 1 millón vértices y aristas.
+## Implementación en C
 
-### Ejecución de Rust
+El archivo grafo_mpi.c contiene el código fuente para generar un grafo de 1 millón de vértices y aristas.
 
-- Lo ideal para ejecutar el código de Rust es hacerlo en una interfaz de línea de comandos, en windows se puede ejecutar en el `Símbolo del Sistema` o también conocido como `CMD`.
-- El CMD debe abrirse en `modo administrador`.
-- Recuerde que también debe cerrar todas aplicaciones.
-- El comando para ejecutar el código de Rust es: `mpiexec -n 4 cargo run --release`.
+### Instrucciones de Ejecución (C)
 
-## MPI en el Lenguaje C
+1. Abra una terminal de `Windows PowerShell`.
+2. (Opcional) Si la implementación de MPI lo requiere, ejecute la terminal en `modo administrador`.
+3. Para obtener mediciones de rendimiento precisas, se recomienda cerrar todas las aplicaciones que no sean esenciales. Esto ayuda a evitar interferencias en los tiempos de cómputo y comunicación.
+4. Ejecute el siguiente comando para lanzar el programa precompilado (grafo_mpi.exe) con 4 procesos:
 
-- En el archivo C se encuentra el código de lenguaje C.
-- Este código permite generar grafo con 1 millón de vértices y aristas.
-
-### Ejecución de C
-
-- Para ejecutar el código, debe realizarlo en el interpretes de líneas de comandos de Windows ==> `Windows PowerShell`.
-- El Windows PowerShell debe abrirse en `modo administrador`.
-- Recuerde cerrar todas aplicaciones que no consuma memoria y ancho de banda, esto es para evitar congestión y consumo de recursos en el cálculo de los tiempo de computo y comunicaciones.
-- El comando para ejecutar el código de C es: `PS \C> mpiexec -n 4 grafo_mpi.exe`
+``bash* mpiexec -n 4 grafo_mpi.exe*
